@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выберите радиостанцию"
+        android:textSize="18sp"
+        android:padding="8dp" />
+
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/stationNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/buttonBulgar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Булгар радиосы" />
+
+    <Button
+        android:id="@+id/buttonTartip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Тартип ФМ" />
+
+    <Button
+        android:id="@+id/buttonTatarRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Татаррадио" />
+
+    <Button
+        android:id="@+id/buttonKunel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Кунел" />
+
+    <Button
+        android:id="@+id/buttonKurai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Курай" />
+
+    <Button
+        android:id="@+id/buttonKitapFM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="КитапФМ" />
+
+    <Button
+        android:id="@+id/buttonStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Стоп" />
+
+</LinearLayout>
