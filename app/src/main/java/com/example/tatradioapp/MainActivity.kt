@@ -1,23 +1,16 @@
-package com.example.tatradioapp
+@file:Suppress("DEPRECATION")
 
-import android.media.AudioAttributes
-import android.media.MediaPlayer
+package com.example.tatradioapp
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.Player
 
 /* class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +49,7 @@ private fun GreetingPreview() {
 fun TatRadioAppTheme(content: @Composable () -> Unit) {
     val nothing = TODO("Not yet implemented")
 }
-*/
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mediaPlayer: MediaPlayer
@@ -147,7 +140,7 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer.release()
     }
 }
-*/
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mediaPlayer: MediaPlayer
@@ -235,5 +228,109 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         mediaPlayer.release()
+    }
+}
+*/
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var player: ExoPlayer
+    private lateinit var statusTextView: TextView
+    private lateinit var stationNameTextView: TextView
+    private lateinit var loadingProgressBar: ProgressBar
+
+    // Ссылки на радиостанции
+    private val stations = mapOf(
+        R.id.buttonBulgar to Station("Булгар радиосы", "https://stream06.pcradio.ru/rad_blgrrds-med"),
+        R.id.buttonTartip to Station("Тартип FM", "https://radio.tatmedia.com:8443/tartipfm"),
+        R.id.buttonTatarRadio to Station("Татар радиосы", "https://tatarradio.hostingradio.ru/tatarradio320.mp3"),
+        R.id.buttonKunel to Station("Кунел радиосы", "https://radio.tatmedia.com:8443/kunel"),
+        R.id.buttonKurai to Station("Курай радиосы", "https://av.bimradio.ru/kurai_mp3"),
+        R.id.buttonKitapFM to Station("Китап FM", "https://radio.tatmedia.com:8443/kitapfm")
+    )
+
+    data class Station(val name: String, val url: String)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        statusTextView = findViewById(R.id.statusTextView)
+        stationNameTextView = findViewById(R.id.stationNameTextView)
+        loadingProgressBar = findViewById(R.id.loadingProgressBar)
+
+        player = ExoPlayer.Builder(this).build()
+
+        // Назначаем обработчики кнопкам радиостанций
+        stations.keys.forEach { buttonId ->
+            findViewById<Button>(buttonId).setOnClickListener {
+                val station = stations[buttonId]
+                station?.let {
+                    playStream(it)
+                }
+            }
+        }
+
+        // Кнопка Стоп
+        findViewById<Button>(R.id.buttonStop).setOnClickListener {
+            stopStream()
+        }
+
+        // Обработка состояния плеера
+        player.addListener(object : Player.Listener {
+            override fun onPlaybackStateChanged(playbackState: Int) {
+                when (playbackState) {
+                    Player.STATE_BUFFERING -> {
+                        statusTextView.text = "Загрузка..."
+                        loadingProgressBar.visibility = View.VISIBLE
+                    }
+                    Player.STATE_READY -> {
+                        statusTextView.text = "Воспроизведение"
+                        loadingProgressBar.visibility = View.GONE
+                    }
+                    Player.STATE_ENDED -> {
+                        statusTextView.text = "Воспроизведение завершено"
+                        loadingProgressBar.visibility = View.GONE
+                    }
+                    Player.STATE_IDLE -> {
+                        statusTextView.text = "Остановлено"
+                        loadingProgressBar.visibility = View.GONE
+                    }
+                }
+            }
+
+            override fun onPlayerError(error: com.google.android.exoplayer2.PlaybackException) {
+                statusTextView.text = "Ошибка воспроизведения: ${error.message}"
+                loadingProgressBar.visibility = View.GONE
+            }
+        })
+    }
+
+    private fun playStream(station: Station) {
+        try {
+            stopStream() // Останавливаем предыдущий поток
+            stationNameTextView.text = station.name
+            val mediaItem = MediaItem.fromUri(Uri.parse(station.url))
+            player.setMediaItem(mediaItem)
+            player.prepare()
+            player.play()
+        } catch (e: Exception) {
+            statusTextView.text = "Ошибка: ${e.message}"
+            loadingProgressBar.visibility = View.GONE
+        }
+    }
+
+    private fun stopStream() {
+        if (player.isPlaying) {
+            player.stop()
+            player.clearMediaItems()
+        }
+        statusTextView.text = "Остановлено"
+        stationNameTextView.text = ""
+        loadingProgressBar.visibility = View.GONE
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        player.release()
     }
 }
