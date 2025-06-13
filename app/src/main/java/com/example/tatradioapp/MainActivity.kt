@@ -56,7 +56,7 @@ private fun GreetingPreview() {
 fun TatRadioAppTheme(content: @Composable () -> Unit) {
     val nothing = TODO("Not yet implemented")
 }
-
+*/
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mediaPlayer: MediaPlayer
