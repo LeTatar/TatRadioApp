@@ -39,13 +39,13 @@
         android:id="@+id/buttonTartip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Тартип ФМ" />
+        android:text="Тартип FM" />
 
     <Button
         android:id="@+id/buttonTatarRadio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Татаррадио" />
+        android:text="Татар радиосы" />
 
     <Button
         android:id="@+id/buttonKunel"
@@ -63,7 +63,7 @@
         android:id="@+id/buttonKitapFM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="КитапФМ" />
+        android:text="Китап FM" />
 
     <Button
         android:id="@+id/buttonStop"
