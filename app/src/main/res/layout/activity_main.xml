@@ -10,9 +10,9 @@
         android:id="@+id/statusTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:text="Выберите радиостанцию"
-        android:textSize="18sp"
-        android:padding="8dp" />
+        android:textSize="18sp" />
 
     <ProgressBar
         android:id="@+id/loadingProgressBar"
@@ -25,9 +25,9 @@
         android:id="@+id/stationNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:text=""
-        android:textSize="16sp"
-        android:padding="8dp" />
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/buttonBulgar"
@@ -39,31 +39,31 @@
         android:id="@+id/buttonTartip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Тартип ФМ" />
+        android:text="Тартип FM" />
 
     <Button
         android:id="@+id/buttonTatarRadio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Татаррадио" />
+        android:text="Татар радиосы" />
 
     <Button
         android:id="@+id/buttonKunel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Кунел" />
+        android:text="Кунел радиосы" />
 
     <Button
         android:id="@+id/buttonKurai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Курай" />
+        android:text="Курай радиосы" />
 
     <Button
         android:id="@+id/buttonKitapFM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="КитапФМ" />
+        android:text="Китап FM" />
 
     <Button
         android:id="@+id/buttonStop"

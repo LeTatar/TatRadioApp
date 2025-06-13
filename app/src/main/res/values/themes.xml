@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <style name="Theme.TatRadioApp" parent="android:Theme.Material.Light.NoActionBar" />
+<resources xmlns:tools="http://schemas.android.com/tools">
+<!-- Базовая тема приложения, наследуемая от AppCompat -->
+<style name="Theme.TatRadioApp" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Цвета и атрибуты темы -->
+    <item name="colorPrimary">@color/purple_500</item>
+    <item name="colorPrimaryDark">@color/purple_700</item>
+    <item name="colorAccent">@color/teal_200</item>
+    <!-- Другие настройки темы -->
+</style>
 </resources>
