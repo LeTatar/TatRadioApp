@@ -43,7 +43,7 @@
         android:rowCount="3"
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
-        android:useDefaultMargins="true">
+        android:useDefaultMargins="false">
 
         <LinearLayout
             android:id="@+id/buttonBulgar"
@@ -54,6 +54,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:padding="8dp"
+            android:layout_marginStart="@dimen/cardview_default_radius"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true">
