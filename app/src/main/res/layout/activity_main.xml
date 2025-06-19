@@ -61,9 +61,10 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:src="@drawable/ic_bulgar"
                 android:contentDescription="@string/bulgar_radio_icon"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_bulgar" />
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -84,7 +85,9 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/tartip_radio_icon"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_tartip" />
+                android:src="@drawable/ic_tartip"
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -105,7 +108,9 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/tatar_radio_icon"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_tatar" />
+                android:src="@drawable/ic_tatar"
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -126,7 +131,9 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/kunel_radio_icon"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_kunel" />
+                android:src="@drawable/ic_kunel"
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -147,7 +154,9 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/kurai_radio_icon"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_kurai" />
+                android:src="@drawable/ic_kurai"
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -168,7 +177,9 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/kitap_radio_icon"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_kitap" />
+                android:src="@drawable/ic_kitap"
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true" />
         </LinearLayout>
 
     </GridLayout>

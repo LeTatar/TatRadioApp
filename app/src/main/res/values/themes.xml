@@ -3,7 +3,7 @@
 <!-- Базовая тема приложения, наследуемая от AppCompat -->
 <style name="Theme.TatRadioApp" parent="Theme.AppCompat.Light.DarkActionBar">
     <!-- Цвета и атрибуты темы -->
-    <item name="colorPrimary">@color/purple_500</item>
+    <item name="colorPrimary">@color/green</item>
     <item name="colorPrimaryDark">@color/purple_700</item>
     <item name="colorAccent">@color/teal_200</item>
     <!-- Другие настройки темы -->
