@@ -6,14 +6,16 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Текст статуса воспроизведения -->
     <TextView
         android:id="@+id/statusTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
         android:text="Выберите радиостанцию"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:padding="8dp" />
 
+    <!-- Индикатор загрузки -->
     <ProgressBar
         android:id="@+id/loadingProgressBar"
         android:layout_width="wrap_content"
@@ -21,54 +23,153 @@
         android:layout_gravity="center_horizontal"
         android:visibility="gone" />
 
+    <!-- Название текущей радиостанции -->
     <TextView
         android:id="@+id/stationNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
         android:text=""
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:padding="8dp" />
 
-    <Button
-        android:id="@+id/buttonBulgar"
+    <!-- Сетка кнопок с радиостанциями -->
+    <GridLayout
+        android:id="@+id/mainGridLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Булгар радиосы" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:useDefaultMargins="true">
 
-    <Button
-        android:id="@+id/buttonTartip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Тартип FM" />
+        <LinearLayout
+            android:id="@+id/buttonBulgar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
-    <Button
-        android:id="@+id/buttonTatarRadio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Татар радиосы" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/bulgar_radio_icon"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_bulgar" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonKunel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Кунел радиосы" />
+        <LinearLayout
+            android:id="@+id/buttonTartip"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
-    <Button
-        android:id="@+id/buttonKurai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Курай радиосы" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/tartip_radio_icon"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_tartip" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonKitapFM"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Китап FM" />
+        <LinearLayout
+            android:id="@+id/buttonTatarRadio"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
-    <Button
-        android:id="@+id/buttonStop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Стоп" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/tatar_radio_icon"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_tatar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonKunel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/kunel_radio_icon"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_kunel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonKurai"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/kurai_radio_icon"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_kurai" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonKitapFM"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/kitap_radio_icon"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_kitap" />
+        </LinearLayout>
+
+    </GridLayout>
 
 </LinearLayout>

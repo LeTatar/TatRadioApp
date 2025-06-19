@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">TatRadioApp</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="bulgar_radio_icon">Иконка Булгар радиосы</string>
+    <string name="tartip_radio_icon">Иконка Тартип FM</string>
+    <string name="tatar_radio_icon">Иконка Татар радиосы</string>
+    <string name="kunel_radio_icon">Иконка Кунел радиосы</string>
+    <string name="kurai_radio_icon">Иконка Курай радиосы</string>
+    <string name="kitap_radio_icon">Иконка Китап FM</string>
 </resources>

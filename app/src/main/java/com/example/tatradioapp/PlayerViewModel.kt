@@ -1,11 +1,11 @@
 @file:Suppress("DEPRECATION")
-package viewmodel
+package com.example.tatradioapp
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import com.google.android.exoplayer2.ExoPlayer
 
-class PlayerViewModel : ViewModel() {
-
+class PlayerViewModel(application: Application) : AndroidViewModel(application) {
     var player: ExoPlayer? = null
 
     override fun onCleared() {
