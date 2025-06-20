@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">Tatar Online Radio Player</string>
+<resources>radio
+    <string name="app_name">TatRadio</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="bulgar_radio_icon">Иконка Булгар радиосы</string>
     <string name="tartip_radio_icon">Иконка Тартип FM</string>
