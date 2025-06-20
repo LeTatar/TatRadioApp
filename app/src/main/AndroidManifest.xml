@@ -17,7 +17,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="TatRadio Application"
+            android:label="TatRadio"
             android:theme="@style/Theme.TatRadioApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
