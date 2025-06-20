@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var loadingProgressBar: ProgressBar
 
     private val stations = mapOf(
-        R.id.buttonBulgar to Station("Болгар радиосы", "https://stream06.pcradio.ru/rad_blgrrds-med"),
+        R.id.buttonBulgar to Station("Болгар радиосы", "https://live.bolgarradio.com/b_aac_hifi.m3u8"),
         R.id.buttonTartip to Station("Тәртип FM", "https://radio.tatmedia.com:8443/tartipfm"),
         R.id.buttonTatarRadio to Station("Татар радиосы", "https://tatarradio.hostingradio.ru/tatarradio320.mp3"),
-        R.id.buttonKunel to Station("Күңел радиосы", "https://radio.tatmedia.com:8443/kunel"),
+        R.id.buttonKunel to Station("Күңел радиосы", "http://radio.tatmedia.com:8800/aktanysh"),
         R.id.buttonKurai to Station("Курай радиосы", "https://av.bimradio.ru/kurai_mp3"),
         R.id.buttonKitapFM to Station("Китап FM", "https://radio.tatmedia.com:8443/kitapfm")
     )
